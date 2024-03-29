@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;300;400;500;600;700;800&display=swap');
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans Thai', sans-serif;
+    color: #525252;
+}
+
+body,html{
+    width: 100%;
+}
+
+
+.remote{
+    padding: 5rem 0 0 0;
+  }
+  
+  .box-display,.box-remote{
+    margin: 2rem;
+    box-shadow: 5px 2px 30px rgba(0, 0, 0, 0.141);
+    border-radius: 5px;
+    padding: 1rem;
+  
+  }
+  .display{
+    flex: 1; /* Allow the container to grow to fill the available space */
+    overflow-y: auto; 
+  }
+  .box-display{
+    padding: inherit;
+    height: 100%;
+  }
+  
+  
+  /*Model*/
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+    
+    /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+  }
+    
+    /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+    
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+    /*end Model*/
+  
+  /*start remote*/
+  
+  .remote-form{
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-evenly;
+  }
+  .water-box{
+    justify-self: end;
+  }
+  .btn-form-remote{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+  }
+  .btn-form-remote button{
+    color: white;
+    background-color: #226F54;
+    border: none;
+    padding: 6px;
+    border-radius: 6%;
+  }
+  .head-remote-water,.head-remote-pui{
+    display: flex;
+    flex-direction: row;
+  }
+  .icon-water,.head-water,.icon-pui,.head-pui{
+    padding: 0.5rem;
+  }
+  .content-water,.content-pui{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+  }
+  
+  .remote-form input {
+    border: none;
+    height: 80px;
+    font-size: 40px;
+    max-width: 120px;
+    border-bottom: 2px solid #33333300; /* Set the default border color */
+    outline: none; /* Remove the default focus outline */
+    transition: border-bottom-color 0.5s ease; /* Add transition for color change */
+  }
+  .search input{
+    border: none;
+    outline: none; /* Remove the default focus outline */
+    transition: border-bottom-color 0.5s ease;
+    border-bottom: 2px solid #33333300;
+  }
+  
+  /* Default placeholder styles */
+  ::placeholder {
+    font-size: 40px;
+    text-align: right; /* Center the text horizontally */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Input text color on hover */
+  input:hover {
+    color: #DA2C38; /* Set the desired color on hover */
+  }
+  
+  /* Input border color on focus */
+  input:focus {
+    border-bottom-color: #DA2C38; /* Set the desired color on focus */
+  }
+  /*end remote*/
+  
+  
+  /*start search*/
+  
+  .search input {
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: inherit;
+    background-color: #F5F5F5;
+  }
+  .search-box{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .search{
+    justify-self: center;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .search ::placeholder {
+    font-size: 15px;
+    line-height: 10; /* Adjust the line-height to vertically center the text */
+    transform: inherit;
+    text-align: start;
+    padding-left: 2rem;
+  }
+  
+  .serach-button{
+    background: #226F54;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: inherit;
+  }
+
+  .icon-search{
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .filter{
+    background: none; 
+    border: none;
+  }
+  
+  /*End search*/
+  
+  /*start table*/
+  .checked:checked + .content-table {
+    border-color: #226F54;
+  }
+  .content-table{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50px;
+    padding: inherit;
+    border: 1px solid transparent; /* Add a transparent border by default */
+    transition: border-color 0.3s ease;
+  }
+  .content-table:hover{
+    border-color: #226F54;
+  }
+  .check:hover{
+    border-color:#226F54;
+  }
+  .content-table:hover .checked {
+    transform: scale(1.5);
+    transition: transform 0.3s ease; 
+  }
+  
+  .head1 input[type=checkbox] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px; 
+    height: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 3px; 
+    outline: none; 
+  }
+  
+  .head1 input[type=checkbox]:checked {
+    background-color: #226F54; 
+    border-color: #226F54; 
+  }
+  
+  
+  .head1 input[type=checkbox]::before {
+    content: '\2713';
+    display: block;
+    text-align: center;
+    line-height: 16px;
+    color: #fff; 
+  }
+  
+  .head1 input[type=checkbox] {
+  
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+  }
+  
+  
+  .head1 input[type=checkbox]::before {
+    
+    transition: opacity 0.3s ease; 
+  }
+  
+  /* Animation when checkbox is checked */
+  .head1 input[type=checkbox]:checked {
+    background-color: #226F54;
+    border-color: #226F54;
+  }
+  
+  .head1 input[type=checkbox]:checked::before {
+    opacity: 1; /* Show the checkmark */
+  }
+  
+  
+  
+  
+  
+  /*start popup box*/
+  /* Style for the Popup Box */
+  .filter-plot{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+  }
+  
+  .popupfilter {
+    display: none;
+    position: fixed;
+    float: right;
+  }
+  
+  .popupbox {
+    background: #fff;
+    padding: 20px;
+  }
+  
+  .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    align-self: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    background-color: #ffffff;
+    box-shadow: 5px 2px 30px rgba(0, 0, 0, 0.141);
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    overflow: auto;
+    top: 130%;
+    right: 200%;
+    margin-left: -80px;
+  }
+  
+  
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  
+  
+  /*start popup input*/
+  
+  .filter-plot select,
+  .filter-plot input[type=date] {
+    height: inherit;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    border: none;
+  }
+  
+  .filter-plot select:hover,
+  .filter-plot input[type=date]:hover {
+    border-color: #555;
+  }
+  
+  
+  .filter-plot select:focus,
+  .filter-plot input[type=date]:focus {
+    outline: none;
+    border: 1px solid #226F54;
+    box-shadow: 0 0 5px rgba(34, 111, 84, 0.5);
+  }
+  .form-filter-btn{
+    margin-top: 1rem;
+    background: #226F54;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+  }
+  label{
+    text-align: start;
+    margin: 10px;
+  }
+  
+  
+  /*End popup input*/
+  
+  /*Start notification*/
+  
+  .overlaynoti {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: end;
+    z-index: 9999;
+    overflow: hidden;
+  }
+  
+  .popupnoti {
+    background: #fff;
+    overflow: auto;
+    width: 300px;
+    height: 100%;
+    transition: transform 0.1s ease; 
+    transform: translateX(100vw); /* Adjusted translateX value */
+  }
+  
+  .popupnoti.show {
+    transform: translateX(0); /* Slide in the popup from the right */
+  }
+  
+  .noti-head{
+    height: 10%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .close{
+    background: #ECF1F4;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .icon{
+    background: #DA2C38;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .text{
+    font-size: 20px;
+    font-weight: 800;
+  }
+  
+  .space{
+    height:1.5px;
+    width: 100%;
+    background:  #ececec;
+    display: block;
+  }
+  
+  .timestamp{
+    padding: 10px;
+    background: #ececec;
+    font-weight: 500 ;
+    font-size: 12px;
+  }
+  .noti-box{
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+  }
+  .right-noti-box{
+    margin-left: 15px;
+  }
+  
+  /*End notification*/
+  
+  
+  .bage{
+    background: #d5d5d5;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    top: 40px; /* Position it at the bottom */
+    z-index: -1;
+  }
+  .custom-table-responsive {
+    height: 100%;
+    border-radius: 4px; 
+    padding: 0 2rem 2rem;
+  
+  }
+  .custom-table {
+    width: 100%; 
+  }
+  .custom-table thead tr, .custom-table thead th {
+    border-top: none;
+    border-bottom: none ;
+    padding-bottom: 1rem;
+    
+  }
+  
+  .custom-table tbody th,
+  .custom-table tbody td {
+    font-weight: 400;
+  }
+  
+  .custom-table tbody tr.row {
+    height: 100px; /* Adjust the height as needed */
+  }
+  
+  
+  .custom-table tbody tr:not(.spacer) {
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.141);
+    border-radius: 7px;
+  
+  }
+  
+  .custom-table tbody tr th,
+  .custom-table tbody tr td {
+    text-align: center;
+    border-radius: 7px;
+  }
+  
+  
+  .custom-table tbody tr.spacer td {
+    padding: 0;
+    height: 15px; /* Set the height of the spacer tr */
+    border-radius: 0;
+    background: transparent;
+  }

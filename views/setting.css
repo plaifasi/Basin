@@ -1,0 +1,769 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;300;400;500;600;700;800&display=swap');
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans Thai', sans-serif;
+    color: #525252;
+}
+.body,.html{
+    height: 100%;
+}
+
+
+.body-container{
+    margin-top: 8rem;
+}
+
+/*start menubar*/
+.headsetting{
+    padding: 1rem;
+    font-size: 25px;
+    font-weight: 600;
+}
+.menu-profile{
+    margin-top: 6rem;   
+}
+
+.menubar-profile-container{
+    margin: 2rem;
+    box-shadow: 5px 2px 30px rgba(0, 0, 0, 0.141); 
+    border-radius: 3px;
+}
+.profile{
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-pic{
+    background-color: #DA2C38;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin: 1rem;
+}
+.profile-info{
+    flex: 1;
+}
+
+.info-control-container{
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.parameter-box,.remote-control-box{
+    box-shadow: 5px 2px 30px rgba(0, 0, 0, 0.141); 
+    border-radius: 3px;
+    padding: 2rem;
+}
+.parameter-box{
+    width: 80%;
+}
+.remote-control-box{
+    width: 18%;
+}
+.date-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*start menubar*/
+
+.menu-equipment {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: flex-end;
+
+}
+.menu-equipment a {
+    color: #525252;
+    text-decoration: none;
+    position: relative;
+}
+
+.menu-equipment a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #226F54;
+    transition: width 0.5s ease;
+}
+
+.menu-equipment a:hover::after,
+.menu-equipment a.selected::after {
+    width: 100%;
+}
+
+
+.add-btn{
+    border: none;
+    background: none;
+    position: relative;
+    cursor: pointer;
+}
+
+/*end menubar*/
+
+
+
+/*start table*/
+
+.box-display{
+    padding: inherit;
+    overflow: hidden;
+    margin: 2rem;
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.141);
+    border-radius: 5px;
+}
+/*end table*/
+
+/*start form part*/
+.value-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.Vtempsur,.Vtempsur,.Vtempleaf,.Vhumidity,.Vhumiditysoil,.Vvpd{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.headinfo{
+    padding: 1rem;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+.min,.max{
+    font-size: 10px;
+}
+.vmin-tempsur,.vmax-tempsur,.vmin-templeaf,.vmax-templeaf,.vmin-humidity,.vmax-humidity,.vmin-humiditysoil,.vmax-humiditysoil,.vmin-vpd,.vmax-vpd{
+    border-radius: 3px;
+    border: 1px solid #333;
+    padding:0 1rem;
+}
+
+#tempsur,#templeaf,#humidity,#humiditysoil,#vpd{
+    border-radius: 3px;
+    border: 1px solid #333;
+    padding:0 1rem;
+}
+/*end form part*/
+
+
+/*start remote*/
+.head-remote{
+    padding: 1rem;
+    font-size: 20px;
+}
+.remote-control-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.head-part{
+    justify-self: start;
+}
+.head-remote select{
+    margin-left: 10px;
+    padding: 2px 20px;
+    border-radius: 20px;
+}
+.wrapper{
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.141);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem;
+    flex-direction: column;
+}
+.layout-remote{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.remote-form{
+    display: grid;
+    grid-template-columns:repeat(4,1fr) ;
+
+}
+.value-remote {
+    margin-right: 20px;
+    font-size: 80px;
+}
+.value-remote-down{
+    font-size: 30px;
+}
+.value-remote input[type="number"],
+.value-remote input[type="time"] {
+    border: 1px solid #d5d5d5;
+    height: 120px;
+    max-width: 160px;
+    font-size: 80px;
+    transition: border-color ease 0.5s;
+}
+
+.value-remote input[type="number"]::placeholder,
+.value-remote input[type="time"]::placeholder {
+    font-size: 80px;
+    text-align: center;
+    transition: color ease 0.5s;
+}
+
+.value-remote input[type="number"]:hover,
+.value-remote input[type="time"]:hover {
+    border: 1px solid #DA2C38;
+}
+
+.value-remote input[type="number"]:hover::placeholder,
+.value-remote input[type="time"]:hover::placeholder {
+    color: #DA2C38;
+}
+
+
+.remote-container{
+
+    
+}
+
+.water-box{
+    justify-self: end;
+}
+.alarm-box{
+    align-self: center;
+}
+.btn-form-remote button{
+    background-color: #226F54;
+    border-radius: 3px;
+    font-size: 15px;
+    color: white;
+    text-decoration: none; 
+    padding: 5px 25px; 
+    border: none;
+    float: right;  
+    margin: 1rem; 
+}
+.btn-form-remote-edit{
+    margin: 2rem;
+    float: right;
+}
+.head-remote-water,.head-remote-pui,.head-remote-alarm{
+    display: flex;
+    flex-direction: row;
+}
+.icon-water,.head-water,.icon-pui,.head-pui,.icon-alarm,.head-alarm{
+    
+}
+.content-water,.content-pui,.content-alarm{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;    
+}
+#editbtn{
+    text-align: end;
+    margin-right: 2rem;
+    border-radius: 5px;
+    background: #226F54;
+    color: #ffffff;
+}
+
+/*end remote*/
+
+/*start more button*/
+.more-button{
+    background: none;
+    font-size: 15px;
+    border: none;
+    margin: 5px;
+}
+/*end more button*/
+
+
+/*start edit button*/
+.edit-button{
+    background: none;
+    border: none;
+    color: #226F54;
+    font-size: 10px;
+}
+/*end edit button*/
+/*start delete button*/
+.delete-button{
+    background: none;
+    border: none;
+    font-size: 10px;
+}
+/*end delete button*/
+
+/*start input styles*/
+
+input[type="number"],[type="text"],[type="time"]{
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: 1.5px solid #d5d5d5;
+    outline: none; 
+    transition: border-color 0.5s ease; 
+}
+
+input:hover {
+    color: #DA2C38; 
+}
+  
+ 
+input:focus {
+    border-color: #DA2C38; 
+}
+
+.form-edit{
+    text-align: center;
+    margin: 10px;
+}
+
+.addopt-button{
+    margin-right: 2rem;
+    border-radius: 30px;
+    border: 1.5px solid #226F54;
+    color: #226F54;
+    background: none;
+    padding: 5px 10px;
+    font-size: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#plus{
+    color: #226F54;
+}
+.button-box{
+    align-self: end;
+    padding-right: 3rem;
+    margin-top: 2rem;
+}
+.saveButton{
+    cursor: pointer;
+    background: none;
+    color: #226F54;
+    padding: 5px 15px;
+    border: 1.5px solid #226F54;
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.cancelButton{
+    cursor: pointer;
+    background: none;
+    color: #ffffff;
+    padding: 5px 15px;
+    border: 1.5px solid #226F54;
+    background: #226F54;
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/*start popup box for add options*/
+.headform{
+    font-size: 20px;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.popup-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    max-height: 500px;
+}
+#optionForm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+/* Add this to your CSS */
+
+
+.inputpart label, .inputpart input {
+    margin: 10px;
+}
+
+.add-button{
+    background: none;
+    color: #226F54;
+    padding: 5px 10px;
+    border: 1.5px solid #226F54;
+    border-radius: 30px;
+    font-size: 10px;
+}
+.buttonpart{
+    margin-top: 2rem
+}
+.saveadd{
+    background: none;
+    color: #226F54;
+    padding: 5px 15px;
+    border: 1.5px solid #226F54;
+    border-radius: 10px;
+}
+.canceladd{
+    background: none;
+    color: #ffffff;
+    padding: 5px 15px;
+    border: 1.5px solid #226F54;
+    background: #226F54;
+    border-radius: 10px;
+    
+}
+
+/*end popup box for add options*/
+
+
+/*start For Webkit browsers */
+#popupBox::-webkit-scrollbar {
+    width: 10px;
+}
+  
+#popupBox::-webkit-scrollbar-thumb {
+    background-color: #226F54; 
+    border-radius: 5px; 
+}
+  
+#popupBox::-webkit-scrollbar-thumb:hover {
+    background-color: #DA2C38; 
+}
+
+/*End For Webkit browsers */
+
+
+
+
+
+/*animation zone*/
+
+/*close popup*/
+.closepopup {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#iconifyCloseBtn:hover {
+    color: #e74c3c; 
+}
+
+#iconifyCloseBtn {
+    transition: transform 0.3s ease;
+}
+
+.closepopup:hover #iconifyCloseBtn {
+    transform: scale(1.2); 
+}
+/*colse popup*/
+
+/*edit/delete options*/
+
+.edit-button, .delete-button {
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    
+}
+
+.edit-button:hover, .delete-button:hover {
+    opacity: 0.7; 
+    transform: scale(1.45);
+}
+/*edit/delete options*/
+
+/*add opptions*/
+.addopt-button:hover {
+
+    background: #226F54; 
+}
+
+.addopt-button:hover #plus {
+    color: #ffffff; 
+}
+/*add opptions*/
+
+
+/*save/cancel button*/
+.saveButton:hover {
+    background: #226F54;
+    color: #ffffff;
+}
+
+.cancelButton:hover {
+    color: #ffffff;
+    border:1px solid
+}
+/*save/cancel button*/
+
+/*start add popup*/
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    overflow: auto;
+    max-height: 550px;
+    margin-top: 5rem;
+}
+
+
+/*end add popup*/   
+
+
+/*satrt button add popup*/
+
+.head{
+    display: flex;
+    justify-content: space-between
+}
+.text{
+    font-size: 30px;
+    font-weight: 600;
+}
+.title{
+    font-size: 20px;
+    margin: 1rem 0;
+}
+.close{
+    background: none;
+    border: none;
+}
+.new-part-btn{
+    text-align: end;
+    margin-top: 1rem;
+}
+.new-value{
+    margin: 1rem 0;
+}
+.popup::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.popup::-webkit-scrollbar-track {
+    background: #ffffff; 
+    border-radius: 5px;
+}
+
+.popup::-webkit-scrollbar-thumb {
+    background-color: #226F54; 
+    border-radius: 5px; 
+}
+
+.popup::-webkit-scrollbar-thumb:hover {
+    background-color: #DA2C38; 
+}
+.save-btn{
+    background: none; 
+    border:1px solid #226F54;
+    cursor: pointer;
+    color: #226F54;
+    padding: 3px 15px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.cancel-btn{
+    background: #226F54; 
+    border:1px solid #226F54;
+    cursor: pointer;
+    color: #fff;
+    padding: 3px 15px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.line{
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 30px;
+    background-color: #d5d5d5;
+}
+.add-part-form input{
+    margin-left: 10px ;
+}
+
+.test {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+/* The actual popup */
+.test .testtext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+  
+/* Popup arrow */
+.test .testtext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+  
+/* Toggle this class - hide and show the popup */
+.test .testtext.show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation keyframes */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+
+/*Start notification*/
+
+.overlaynoti {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: end;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.popupnoti {
+    background: #fff;
+    overflow: auto;
+    width: 300px;
+    height: 100%;
+    transition: transform 0.1s ease; 
+    transform: translateX(100vw); /* Adjusted translateX value */
+}
+
+.popupnoti.show {
+    transform: translateX(0); /* Slide in the popup from the right */
+}
+
+.noti-head{
+    height: 10%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.close{
+    background: #ECF1F4;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.icon{
+    background: #DA2C38;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+.text{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.space{
+    height:1.5px;
+    width: 100%;
+    background:  #ececec;
+    display: block;
+}
+
+.timestamp{
+    padding: 10px;
+    background: #ececec;
+    font-weight: 500 ;
+    font-size: 12px;
+}
+.noti-box{
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}
+.right-noti-box{
+    margin-left: 15px;
+}
+
+/*End notification*/
